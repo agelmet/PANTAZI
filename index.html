@@ -394,12 +394,10 @@
                     rgba(28,25,23,0.4) 100%
                 );
             }
-            .hero-title { font-size: 2.8rem; }
-            .hero-inner { max-width: 100%; text-align: center; }
-            .hero-tag { justify-content: center; }
-            .hero-tag::before { display: none; }
-            .hero-desc { margin: 0 auto 2.5rem; }
-            .hero-actions { justify-content: center; }
+            .hero-content { padding-top: 11rem; } 
+            .hero-tag { font-size: 0.6rem; margin-bottom: 1.2rem; }
+            .hero-title { font-size: 2.1rem; }
+            .hero-inner { max-width: 100%; }
         }
 
         /* ═══════════════ SECTION SHARED ═══════════════ */
@@ -442,14 +440,22 @@
         }
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr 1fr; /* Symmetrical split */
             gap: clamp(3rem, 6vw, 6rem);
-            align-items: start;
+            align-items: start; /* Critical for sticky position */
         }
         .about-image-wrap {
             position: relative;
-            overflow: hidden;
         }
+        
+        /* STICKY IMAGE FOR DESKTOP */
+        @media (min-width: 901px) {
+            .about-image-wrap {
+                position: sticky;
+                top: 7rem; 
+            }
+        }
+
         .about-image-wrap::before {
             content: '';
             position: absolute;
@@ -484,29 +490,24 @@
             opacity: 0.08;
             z-index: -1;
         }
+        
         .about-text p {
             font-family: var(--sans);
-            font-size: 0.92rem;
+            font-size: 0.95rem; /* Slightly larger, more readable */
             font-weight: 300;
             line-height: 1.85;
             color: var(--stone-600);
-            margin-bottom: 1.2rem;
-            text-align: justify;
-        }
-        .about-text p:last-of-type {
-            margin-bottom: 0;
+            margin-bottom: 1.5rem;
         }
         .about-text .highlight-quote {
             font-family: var(--serif);
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             font-style: italic;
             color: var(--accent-dark);
             line-height: 1.65;
             padding: 1.5rem 0 1.5rem 1.5rem;
             border-left: 2px solid var(--accent);
-            margin: 2rem 0;
-            break-inside: avoid;
-            text-align: left;
+            margin: 2.5rem 0;
         }
 
         @media (max-width: 900px) {
@@ -515,9 +516,6 @@
                 gap: 2.5rem;
             }
             .about-image-wrap { max-width: 400px; }
-            .about-text {
-                column-count: 1;
-            }
         }
 
         /* ═══════════════ SERVICES ═══════════════ */
@@ -1129,10 +1127,10 @@
 
                     <p>Είναι κάτοχος Πτυχίου Κοινωνιολογίας με κατεύθυνση Εγκληματολογίας από το Πάντειο Πανεπιστήμιο, Μεταπτυχιακού τίτλου (MSc) στην Criminal Investigation από πανεπιστήμιο του Derby, καθώς και Μεταπτυχιακού τίτλου (MSc) στην Προσωποκεντρική Ψυχοθεραπεία απο το Πανεπιστημιου το Central Lancashire. Αυτή την περίοδο συνεχίζει τις σπουδές της στην Ψυχολογία με κατεύθυνση την Εγκληματολογική Ψυχολογία στο Πανεπιστήμιο του Central Lancashire.</p>
 
-                    <p>Παράλληλα, έχει ολοκληρώσει εκπαίδευση στην Ψυχοσεξουαλική Θεραπεία και Υγεία από το ICPS College of Humanistic Sciences και έχει εκπαιδευτεί στο Ψυχόδραμα και το Κοινωνιόδραμα από το Ελληνικό Κέντρο Ψυχοδράματος και Κοινωνιοδράματος, ενσωματώνοντας βιωματικές, δημιουργικές και εμπειρικές μεθόδους στη δουλειά της.</
+                    <p>Παράλληλα, έχει ολοκληρώσει εκπαίδευση στην Ψυχοσεξουαλική Θεραπεία και Υγεία από το ICPS College of Humanistic Sciences και έχει εκπαιδευτεί στο Ψυχόδραμα και το Κοινωνιόδραμα από το Ελληνικό Κέντρο Ψυχοδράματος και Κοινωνιοδράματος, ενσωματώνοντας βιωματικές, δημιουργικές και εμπειρικές μεθόδους στη δουλειά της.</p>
 
                     <div class="highlight-quote">Στο θεραπευτικό της έργο, ακολουθεί την Προσωποκεντρική προσέγγιση, δημιουργώντας έναν ασφαλή και υποστηρικτικό χώρο όπου το άτομο μπορεί να εξερευνήσει τον εαυτό του, να ενισχύσει την αυτογνωσία του και να κινηθεί προς ουσιαστικές αλλαγές με τον δικό του ρυθμό.</div>
-                    
+
                     <p>Έχει εστιάσει ερευνητικά σε ζητήματα διαπροσωπικής δυναμικής και τραύματος, με ιδιαίτερο ενδιαφέρον στη μελέτη της κακοποίησης ανδρών από γυναίκες συντρόφους, καθώς και στη διερεύνηση της θεραπευτικής επίδρασης των πολεμικών τεχνών στην ψυχική ανθεκτικότητα και τη ρύθμιση του στρες.</p>
 
                     <p>Παράλληλα, δραστηριοποιείται ως Σύμβουλος Επιχειρήσεων και Εκπαιδεύτρια, σχεδιάζοντας και υλοποιώντας εκπαιδευτικά προγράμματα σε οργανισμούς στην Ελλάδα και το εξωτερικό. Η δουλειά της επικεντρώνεται σε θέματα όπως η ανάπτυξη ανθρώπινου δυναμικού, η κατανόηση της νευροδιαφορετικότητας (neurodiversity), η επικοινωνία, η διαχείριση αλλαγών και η ενίσχυση της λειτουργικότητας των ομάδων.</p>
