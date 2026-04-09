@@ -394,11 +394,12 @@
                     rgba(28,25,23,0.4) 100%
                 );
             }
-            /* MOBILE ADJUSTMENTS: Moved further down, slightly smaller texts */
-            .hero-content { padding-top: 11rem; } 
-            .hero-tag { font-size: 0.6rem; margin-bottom: 1.2rem; }
-            .hero-title { font-size: 2.1rem; }
-            .hero-inner { max-width: 100%; }
+            .hero-title { font-size: 2.8rem; }
+            .hero-inner { max-width: 100%; text-align: center; }
+            .hero-tag { justify-content: center; }
+            .hero-tag::before { display: none; }
+            .hero-desc { margin: 0 auto 2.5rem; }
+            .hero-actions { justify-content: center; }
         }
 
         /* ═══════════════ SECTION SHARED ═══════════════ */
@@ -483,23 +484,19 @@
             opacity: 0.08;
             z-index: -1;
         }
-        
-        /* SYMMETRICAL TEXT LAYOUT */
-        .about-description {
-            column-count: 2;
-            column-gap: 2.5rem;
-            text-align: justify;
-        }
-        .about-description p {
+        .about-text p {
             font-family: var(--sans);
             font-size: 0.92rem;
             font-weight: 300;
             line-height: 1.85;
             color: var(--stone-600);
             margin-bottom: 1.2rem;
-            break-inside: avoid;
+            text-align: justify;
         }
-        .about-description .highlight-quote {
+        .about-text p:last-of-type {
+            margin-bottom: 0;
+        }
+        .about-text .highlight-quote {
             font-family: var(--serif);
             font-size: 1.15rem;
             font-style: italic;
@@ -518,7 +515,7 @@
                 gap: 2.5rem;
             }
             .about-image-wrap { max-width: 400px; }
-            .about-description {
+            .about-text {
                 column-count: 1;
             }
         }
@@ -1127,15 +1124,15 @@
                 <div class="section-tag reveal">Σχετικά</div>
                 <h2 class="section-title reveal reveal-delay-1">Ντέπη Πανταζή</h2>
                 <div class="divider reveal reveal-delay-2"></div>
-                <div class="about-description reveal reveal-delay-3">
+                <div class="reveal reveal-delay-3">
                     <p>Η Ντέπη Πανταζή είναι Προσωποκεντρική Ψυχοθεραπεύτρια, Σύμβουλος Επιχειρήσεων και Εκπαιδεύτρια, με πολυδιάστατη επιστημονική και επαγγελματική πορεία που συνδυάζει την ψυχολογία, την εγκληματολογική σκέψη και την κατανόηση της ανθρώπινης συμπεριφοράς σε ατομικό και οργανωσιακό επίπεδο.</p>
 
                     <p>Είναι κάτοχος Πτυχίου Κοινωνιολογίας με κατεύθυνση Εγκληματολογίας από το Πάντειο Πανεπιστήμιο, Μεταπτυχιακού τίτλου (MSc) στην Criminal Investigation από πανεπιστήμιο του Derby, καθώς και Μεταπτυχιακού τίτλου (MSc) στην Προσωποκεντρική Ψυχοθεραπεία απο το Πανεπιστημιου το Central Lancashire. Αυτή την περίοδο συνεχίζει τις σπουδές της στην Ψυχολογία με κατεύθυνση την Εγκληματολογική Ψυχολογία στο Πανεπιστήμιο του Central Lancashire.</p>
 
-                    <p>Παράλληλα, έχει ολοκληρώσει εκπαίδευση στην Ψυχοσεξουαλική Θεραπεία και Υγεία από το ICPS College of Humanistic Sciences και έχει εκπαιδευτεί στο Ψυχόδραμα και το Κοινωνιόδραμα από το Ελληνικό Κέντρο Ψυχοδράματος και Κοινωνιοδράματος, ενσωματώνοντας βιωματικές, δημιουργικές και εμπειρικές μεθόδους στη δουλειά της.</p>
+                    <p>Παράλληλα, έχει ολοκληρώσει εκπαίδευση στην Ψυχοσεξουαλική Θεραπεία και Υγεία από το ICPS College of Humanistic Sciences και έχει εκπαιδευτεί στο Ψυχόδραμα και το Κοινωνιόδραμα από το Ελληνικό Κέντρο Ψυχοδράματος και Κοινωνιοδράματος, ενσωματώνοντας βιωματικές, δημιουργικές και εμπειρικές μεθόδους στη δουλειά της.</
 
                     <div class="highlight-quote">Στο θεραπευτικό της έργο, ακολουθεί την Προσωποκεντρική προσέγγιση, δημιουργώντας έναν ασφαλή και υποστηρικτικό χώρο όπου το άτομο μπορεί να εξερευνήσει τον εαυτό του, να ενισχύσει την αυτογνωσία του και να κινηθεί προς ουσιαστικές αλλαγές με τον δικό του ρυθμό.</div>
-
+                    
                     <p>Έχει εστιάσει ερευνητικά σε ζητήματα διαπροσωπικής δυναμικής και τραύματος, με ιδιαίτερο ενδιαφέρον στη μελέτη της κακοποίησης ανδρών από γυναίκες συντρόφους, καθώς και στη διερεύνηση της θεραπευτικής επίδρασης των πολεμικών τεχνών στην ψυχική ανθεκτικότητα και τη ρύθμιση του στρες.</p>
 
                     <p>Παράλληλα, δραστηριοποιείται ως Σύμβουλος Επιχειρήσεων και Εκπαιδεύτρια, σχεδιάζοντας και υλοποιώντας εκπαιδευτικά προγράμματα σε οργανισμούς στην Ελλάδα και το εξωτερικό. Η δουλειά της επικεντρώνεται σε θέματα όπως η ανάπτυξη ανθρώπινου δυναμικού, η κατανόηση της νευροδιαφορετικότητας (neurodiversity), η επικοινωνία, η διαχείριση αλλαγών και η ενίσχυση της λειτουργικότητας των ομάδων.</p>
