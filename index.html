@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ντέπη Πανταζή — Προσωποκεντρική Ψυχοθεραπεία</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+    <!-- Favicon updated -->
+    <link rel="icon" type="image/jpeg" href="https://github.com/agelmet/PANTAZI/blob/main/PIC_0925.JPG?raw=true">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -224,7 +225,8 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background-image: url('https://github.com/agelmet/PANTAZI/blob/main/pantahero.jpg?raw=true');
+            /* Updated hero background image */
+            background-image: url('https://github.com/agelmet/PANTAZI/blob/main/panta5.jpg?raw=true');
             background-size: cover;
             background-position: 70% center;
             opacity: 0;
@@ -611,9 +613,17 @@
 
         .credentials-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.2fr 1fr; /* Symmetrical 3-col layout for new image */
             gap: 4rem;
             margin-top: 3.5rem;
+            align-items: center;
+        }
+        .credentials-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain; /* True to size, not cropped */
+            display: block;
+            box-shadow: 15px 15px 0 var(--accent); /* Nice green shadow */
         }
         .cred-group h3 {
             font-family: var(--sans);
@@ -651,8 +661,9 @@
             font-weight: 400;
         }
 
-        @media (max-width: 768px) {
-            .credentials-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+        @media (max-width: 900px) {
+            .credentials-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+            .credentials-image { margin: 0 auto; max-width: 400px; }
         }
 
         /* ═══════════════ IDENTITY / PILLARS ═══════════════ */
@@ -1057,6 +1068,7 @@
 </head>
 <body>
 
+<!-- ═══════════ NAVIGATION ═══════════ -->
 <nav class="nav" id="nav">
     <div class="nav-inner">
         <a href="#hero" class="nav-brand">
@@ -1088,6 +1100,7 @@
     <a href="#contact" onclick="closeMobile()">Κλείστε Ραντεβού</a>
 </div>
 
+<!-- ═══════════ HERO ═══════════ -->
 <section class="hero" id="hero">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
@@ -1111,11 +1124,13 @@
     </div>
 </section>
 
+<!-- ═══════════ ABOUT ═══════════ -->
 <section class="section about" id="about">
     <div class="container">
         <div class="about-grid">
             <div class="about-image-wrap reveal">
-                <img src="https://github.com/agelmet/PANTAZI/blob/main/pantazi.jpg?raw=true" alt="Ντέπη Πανταζή" class="about-image" loading="lazy">
+                <!-- Updated About Image -->
+                <img src="https://github.com/agelmet/PANTAZI/blob/main/PIC_0925.JPG?raw=true" alt="Ντέπη Πανταζή" class="about-image" loading="lazy">
                 <div class="about-image-shadow"></div>
             </div>
             <div class="about-text">
@@ -1146,6 +1161,7 @@
     </div>
 </section>
 
+<!-- ═══════════ SERVICES ═══════════ -->
 <section class="section" id="services">
     <div class="container">
         <div class="services-header">
@@ -1195,13 +1211,17 @@
     </div>
 </section>
 
+<!-- ═══════════ CREDENTIALS ═══════════ -->
 <section class="section credentials" id="credentials">
     <div class="container">
         <div class="section-tag reveal">Κατάρτιση</div>
         <h2 class="section-title reveal reveal-delay-1">Ακαδημαϊκό Υπόβαθρο &amp;<br>Επιστημονική Κατάρτιση</h2>
         <p class="section-subtitle reveal reveal-delay-2">Η διεπιστημονική προσέγγιση στηρίζεται σε ένα ευρύ και διαρκώς εξελισσόμενο ακαδημαϊκό και ερευνητικό υπόβαθρο.</p>
 
+        <!-- Symmetrical 3-Column Layout with Image in the Middle -->
         <div class="credentials-grid">
+            
+            <!-- Left Column -->
             <div class="cred-group reveal">
                 <h3>Βασικές &amp; Μεταπτυχιακές Σπουδές</h3>
                 <div class="cred-item">
@@ -1230,8 +1250,14 @@
                 </div>
             </div>
 
+            <!-- Middle Column: New Image -->
+            <div class="reveal reveal-delay-1" style="position: relative;">
+                <img src="https://github.com/agelmet/PANTAZI/blob/main/panta1.jpg?raw=true" alt="Κατάρτιση" class="credentials-image" loading="lazy">
+            </div>
+
+            <!-- Right Column -->
             <div>
-                <div class="cred-group reveal reveal-delay-1">
+                <div class="cred-group reveal reveal-delay-2">
                     <h3>Συμπληρωματική Εκπαίδευση</h3>
                     <div class="cred-item">
                         <strong>Ψυχοσεξουαλική Θεραπεία και Υγεία</strong>
@@ -1247,7 +1273,7 @@
                     </div>
                 </div>
 
-                <div class="cred-group reveal reveal-delay-2" style="margin-top:2.5rem;">
+                <div class="cred-group reveal reveal-delay-3" style="margin-top:2.5rem;">
                     <h3>Ερευνητικά Ενδιαφέροντα</h3>
                     <div class="cred-item">
                         <strong>Διαπροσωπική δυναμική &amp; τραύμα</strong>
@@ -1260,10 +1286,12 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
+<!-- ═══════════ IDENTITY / PILLARS ═══════════ -->
 <section class="section" id="identity">
     <div class="container">
         <div class="services-header">
@@ -1299,6 +1327,7 @@
     </div>
 </section>
 
+<!-- ═══════════ SPACE ═══════════ -->
 <section class="section space" id="space">
     <div class="container">
         <div class="space-header">
@@ -1308,20 +1337,21 @@
         </div>
 
         <div class="gallery reveal">
+            <!-- Updated Space Images -->
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://github.com/agelmet/PANTAZI/blob/main/sp.jpg?raw=true" alt="Χώρος 1" loading="lazy">
+                <img src="https://github.com/agelmet/PANTAZI/blob/main/panta2.jpg?raw=true" alt="Χώρος 1" loading="lazy">
                 <div class="gallery-overlay">
                     <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                 </div>
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://github.com/agelmet/PANTAZI/blob/main/sp22.jpg?raw=true" alt="Χώρος 2" loading="lazy">
+                <img src="https://github.com/agelmet/PANTAZI/blob/main/panta3.jpg?raw=true" alt="Χώρος 2" loading="lazy">
                 <div class="gallery-overlay">
                     <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                 </div>
             </div>
             <div class="gallery-item" onclick="openLightbox(this)">
-                <img src="https://github.com/agelmet/PANTAZI/blob/main/sp32.jpg?raw=true" alt="Χώρος 3" loading="lazy">
+                <img src="https://github.com/agelmet/PANTAZI/blob/main/panta4.jpg?raw=true" alt="Χώρος 3" loading="lazy">
                 <div class="gallery-overlay">
                     <svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                 </div>
@@ -1330,6 +1360,7 @@
     </div>
 </section>
 
+<!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" aria-label="Close">
         <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
@@ -1337,6 +1368,7 @@
     <img src="" alt="" id="lightboxImg">
 </div>
 
+<!-- ═══════════ REVIEWS ═══════════ -->
 <section class="section reviews" id="reviews">
     <div class="container">
         <div class="reviews-header">
@@ -1347,6 +1379,7 @@
 
         <div class="reviews-track-wrapper reveal">
             <div class="reviews-track" id="reviewsTrack">
+                <!-- Set 1 -->
                 <div class="review-card">
                     <div class="review-top">
                         <div class="review-score">
@@ -1438,6 +1471,7 @@
                     <div class="review-meta">14 Φεβρουαρίου 2025 · 1 αξιολόγηση</div>
                 </div>
 
+                <!-- Duplicate set for infinite scroll -->
                 <div class="review-card">
                     <div class="review-top">
                         <div class="review-score">
@@ -1540,6 +1574,7 @@
     </div>
 </section>
 
+<!-- ═══════════ CONTACT / FOOTER ═══════════ -->
 <section class="section contact" id="contact">
     <div class="container">
         <div class="contact-grid">
@@ -1589,6 +1624,7 @@
     </div>
 </section>
 
+<!-- Back to top -->
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
     <svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
