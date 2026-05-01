@@ -91,8 +91,11 @@
         }
         .nav-brand {
             text-decoration: none;
-            color: var(--stone-800);
-            transition: opacity 0.3s;
+            color: white; /* Initial state */
+            transition: opacity 0.3s, color 0.4s var(--transition);
+        }
+        .nav.scrolled .nav-brand {
+            color: var(--stone-800); /* Scrolled state */
         }
         .nav-brand:hover { opacity: 0.7; }
         .nav-brand-name {
@@ -108,8 +111,12 @@
             font-weight: 400;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--accent);
+            color: rgba(255, 255, 255, 0.9); /* Initial state */
             margin-top: 2px;
+            transition: color 0.4s var(--transition);
+        }
+        .nav.scrolled .nav-brand-title {
+            color: var(--accent); /* Scrolled state */
         }
         .nav-links {
             display: flex;
@@ -123,10 +130,13 @@
             font-weight: 500;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: var(--stone-600);
+            color: rgba(255, 255, 255, 0.9); /* Initial state */
             text-decoration: none;
             transition: color 0.3s;
             position: relative;
+        }
+        .nav.scrolled .nav-links a {
+            color: var(--stone-600); /* Scrolled state */
         }
         .nav-links a::after {
             content: '';
@@ -135,10 +145,14 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--accent);
-            transition: width 0.4s var(--transition);
+            background: white; /* Initial state */
+            transition: width 0.4s var(--transition), background 0.4s var(--transition);
         }
-        .nav-links a:hover { color: var(--stone-900); }
+        .nav.scrolled .nav-links a::after {
+            background: var(--accent); /* Scrolled state */
+        }
+        .nav-links a:hover { color: white; }
+        .nav.scrolled .nav-links a:hover { color: var(--stone-900); }
         .nav-links a:hover::after { width: 100%; }
         .nav-cta {
             font-family: var(--sans) !important;
@@ -172,9 +186,15 @@
             display: block;
             width: 22px;
             height: 1.5px;
-            background: var(--stone-800);
+            background: white; /* Initial state */
             margin: 5px 0;
-            transition: all 0.4s var(--transition);
+            transition: all 0.4s var(--transition), background 0.4s var(--transition);
+        }
+        .nav.scrolled .nav-toggle span {
+            background: var(--stone-800); /* Scrolled state */
+        }
+        .nav-toggle.active span {
+            background: var(--stone-800); /* Always dark when menu is open */
         }
         .nav-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
